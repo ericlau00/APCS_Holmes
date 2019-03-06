@@ -3,13 +3,13 @@
 By *Eric Lau* and *Jesse Chen*
 
 **Fields**
-- Field 1
-- Field 2
+- int[] refArray
+- int filledElements
 - Field n
 
 **Constructors**
+- Constructor 0
 - Constructor 1
-- Constructor 2
 - Constructor n
 
 **Methods**
