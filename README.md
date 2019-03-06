@@ -17,7 +17,7 @@ By *Eric Lau* and *Jesse Chen*
 - Method 2
 - Method n
 
-> This is a quote, and can contain
-> comments or remarks, perhaps on
+> This is a quote, and can contain \n
+> comments or remarks, perhaps on \n
 > UserOfList or something. (Jesse)
 
