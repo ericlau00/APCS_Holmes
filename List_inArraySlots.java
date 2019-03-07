@@ -45,8 +45,13 @@ public class List_inArraySlots {
       @return true, in keeping with conventions yet to be discussed
      */
      public boolean add( int value) {
+      if (filledElements < refArray.length) {
          refArray[filledElements++] = value;
-         return true;
+       } else {
+         expand();
+         refArray[filledElements++] = value;
+       }
+       return true;
      }
 
 
@@ -54,13 +59,12 @@ public class List_inArraySlots {
       Double the capacity of the List_inArraySlots, 
       preserving existing data
      */
-     // private void expand() {
-        // System.out.println( "expand... (for debugging)");
-           // /* S.O.P. rules for debugging:
-              // Working methods should be silent. But during 
-              // development, the programmer must verify that 
-              // this method is called when that is appropriate.
-              // So test using the println(), then comment it out.
-              // */
-     // }
+      private void expand() {
+        int doubled = filledElements * 2;
+        int[] oldArray = refArray;
+        refArray = new int[doubled];
+        for (int old_index = 0; old_index < filledElements; old_index++) {
+          refArray[old_index] = oldArray[old_index];
+        }
+      }
 }
