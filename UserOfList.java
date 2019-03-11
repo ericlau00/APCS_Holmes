@@ -52,18 +52,18 @@ public class UserOfList {
         setTest( 16);
         System.out.println();
         
-        // // test adding at a specified position
-        // addAtTest( 0, 29); // beginning of the list
+        // test adding at a specified position
+        addAtTest( 0, 29); // beginning of the list
 
-        // // end of the list using the new add method
-        // addAtTest( list.size(), 17);
+        // end of the list using the new add method
+        addAtTest( list.size(), 17);
 
-        // addAtTest( 2, 19); // middle of a small list
+        addAtTest( 2, 19); // middle of a small list
 
-        // // force an expansion
-        // addAtTest( 2, 23);
-        // addAtTest( 2, 23);
-        // addAtTest( 2, 23);
+        // force an expansion
+        addAtTest( 2, 23);
+        addAtTest( 2, 23);
+        addAtTest( 2, 23);
 
         // test removing an element
         System.out.println("removing value " + list.remove( 6)
@@ -86,17 +86,17 @@ public class UserOfList {
     /**
       Test the 2-argument add( index, value) method.
      */
-    // private static void addAtTest( int addAt
-                                 // , int value
-                                 // ) {
-        // list.add( addAt, value);
-        // System.out.println(
-            // "insert " + value
-          // + " at position " + addAt
-          // + ", resulting in "  + list.size() + " elements:"
-          // + System.lineSeparator()
-          // + list
-          // + System.lineSeparator()
-        // );
-    // }
+    private static void addAtTest( int addAt
+                                 , int value
+                                 ) {
+        list.add( addAt, value);
+        System.out.println(
+            "insert " + value
+          + " at position " + addAt
+          + ", resulting in "  + list.size() + " elements:"
+          + System.lineSeparator()
+          + list
+          + System.lineSeparator()
+        );
+    }
 }

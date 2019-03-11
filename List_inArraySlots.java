@@ -60,7 +60,6 @@ public class List_inArraySlots {
       preserving existing data.
      */
      private void expand() {
-        System.out.println( "expand... (for debugging)");
            /* S.O.P. rules for debugging:
               Working methods should be silent. But during
               development, the programmer must verify that
@@ -96,8 +95,6 @@ public class List_inArraySlots {
         elements[index] = newValue;
         return oldValue;
     }
-
-
     /**
       Insert @value at position @index in this list.
 
@@ -105,9 +102,20 @@ public class List_inArraySlots {
       and any subsequent elements to the right
       (that is, increase the index associated with each).
      */
-     // public void add( int index, int value) {
-         
-     // }
+     public void add( int index, int value) {
+        int[] clone = elements;
+        filledElements = 0;
+        for ( int cloneIndex = 0; cloneIndex < clone.length; cloneIndex++) {
+          if (cloneIndex < index) {
+            add(clone[cloneIndex]);
+          } else if (cloneIndex == index) {
+            elements[cloneIndex] = value;
+            filledElements++;
+          } else {
+            add(clone[cloneIndex]);
+          }
+        }
+     }
 
 
     /**
@@ -123,7 +131,7 @@ public class List_inArraySlots {
          for(int position = index; position < filledElements; position++) {
              elements[position] = elements[position + 1];
          }
-         elements[filledElements--] = 0;
+         filledElements--;
          return removedValue; 
      }
 }
