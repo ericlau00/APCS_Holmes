@@ -26,22 +26,42 @@ public class List_inArraySlots {
       Construct an empty list with a small initial capacity.
      */
     public List_inArraySlots() {
+        intElements = new int[INITIAL_CAPACITY];
+        doubleElements = new double[INITIAL_CAPACITY];
+        stringElements = new String[INITIAL_CAPACITY];
+        typeOfElements = new int[INITIAL_CAPACITY];
     }
 
 
     /**
       @return the number of elements in this list
      */
-    // public int size() {
-    // }
+    public int size() {
+        return filledElements;
+    }
 
 
      /**
        @return a string representation of this list,
        in [a,b,c,] format
       */
-    // public String toString() {
-    // }
+    public String toString() {
+        String representation = "[";
+        for(int element = 0; element < filledElements; element++) {
+            if(typeOfElements[element] == 0) {
+                representation += intElements[element];
+            }
+            else if (typeOfElements[element] == 1) {
+                representation += doubleElements[element];
+            }
+            else {
+                representation += stringElements[element];
+            }
+                representation += ",";
+        }
+        representation += "]";
+        return representation;
+    }
 
 
     /**
@@ -49,25 +69,39 @@ public class List_inArraySlots {
 
       @return true, in keeping with conventions yet to be discussed
      */
-     // public boolean add( int type   // same meaning as in typeOfElements
-                       // , int    intValue
-                       // , double doubleValue
-                       // , String stringValue
-                       // ) {
-     // }
+     public boolean add( int type   // same meaning as in typeOfElements
+                       , int    intValue
+                       , double doubleValue
+                       , String stringValue
+                       ) {
+        if (filledElements == typeOfElements.length) expand();
+        if (type == 0) {
+            intElements[filledElements] = intValue;
+            typeOfElements[filledElements++] = type;
+        }
+        if (type == 1) {
+            doubleElements[filledElements] = doubleValue;
+            typeOfElements[filledElements++] = type;
+        }
+        if (type == 2) {
+            stringElements[filledElements] = stringValue;
+            typeOfElements[filledElements++] = type;
+        }
+        return true;
+     }
 
 
     /**
       Double the capacity of the List_inArraySlots,
       preserving existing data.
      */
-     // private void expand() {
-        // System.out.println( "expand... (for debugging)");
-           // /* S.O.P. rules for debugging:
-              // Working methods should be silent. But during
-              // development, the programmer must verify that
-              // this method is called when that is appropriate.
-              // So test using the println(), then comment it out.
-              // */
-     // }
+     private void expand() {
+        System.out.println( "expand... (for debugging)");
+           /* S.O.P. rules for debugging:
+              Working methods should be silent. But during
+              development, the programmer must verify that
+              this method is called when that is appropriate.
+              So test using the println(), then comment it out.
+              */
+     }
 }
