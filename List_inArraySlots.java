@@ -103,19 +103,18 @@ public class List_inArraySlots {
       (that is, increase the index associated with each).
      */
      public void add( int index, int value) {
-        int[] clone = elements;
-        filledElements = 0;
-        for ( int cloneIndex = 0; cloneIndex < clone.length; cloneIndex++) {
-          if (cloneIndex < index) {
-            add(clone[cloneIndex]);
-          } else if (cloneIndex == index) {
-            elements[cloneIndex] = value;
-            filledElements++;
-          } else {
-            add(clone[cloneIndex]);
+        int[] clone = new int[elements.length + 1];
+        for (int elementsIndex = 0; elementsIndex < elements.length; elementsIndex++) {
+          if (elementsIndex < index) {
+            clone[elementsIndex] = elements[elementsIndex];
+          } else if (elementsIndex == index) {
+            clone[index] = value;
+          } else if (elementsIndex > index) {
+            clone[elementsIndex] = elements[elementsIndex - 1];
           }
         }
-     }
+        elements = clone;
+    }
 
 
     /**
