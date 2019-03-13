@@ -103,5 +103,25 @@ public class List_inArraySlots {
               this method is called when that is appropriate.
               So test using the println(), then comment it out.
               */
+        int[] newInt = new int[intElements.length * 2];
+        double[] newDouble = new double[doubleElements.length * 2];
+        String[] newString = new String[stringElements.length * 2];
+        int[] newType = new int[typeOfElements.length * 2];
+        for(int index = 0; index < filledElements; index++) {
+            newInt[index] = intElements[index];
+            newDouble[index] = doubleElements[index];
+            newString[index] = stringElements[index];
+            newType[index] = typeOfElements[index];
+        }
+        intElements = newInt;
+        doubleElements = newDouble;
+        stringElements = newString;
+        typeOfElements = newType;
+     }
+     
+     public Element get(int index) {
+         int type = typeOfElements[index];
+         Element element = new Element(type);
+         return element;
      }
 }
