@@ -35,8 +35,8 @@ public class UserOfList {
              + list.size() + " elements:");
         System.out.println( list + System.lineSeparator());
         
-        System.out.println(list.get(0));
-        System.out.println(list.get(1));
-        System.out.println(list.get(2));
+        for(int index = list.size() - 1; index >= 0; index--) {
+            System.out.println("index: " + index + " value: " + list.get(index));
+        }
     }
 }

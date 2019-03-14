@@ -121,14 +121,10 @@ public class List_inArraySlots {
      
      public Element get(int index) {
          int type = typeOfElements[index];
-         Element element = new Element(type);
-         if (type == 0) {
-          element = intElements[index];
-         } else if (type == 1) {
-          element = doubleElements[index];
-         } else {
-          element = stringElements[index];
-         }
+         Element element = new Element( type, 
+                                        intElements[index],
+                                        doubleElements[index],
+                                        stringElements[index]);
          return element;
      }
 }
