@@ -33,6 +33,7 @@ public class List_inArraySlots {
     public String toString() {
         String representation = "[";
         for(int element = 0; element < filledElements; element++) {
+            representation += objectElements[element];
             representation += ",";
         }
         representation += "]";
@@ -45,11 +46,9 @@ public class List_inArraySlots {
 
       @return true, in keeping with conventions yet to be discussed
      */
-     public boolean add( int type   // same meaning as in typeOfElements
-                       , int    intValue
-                       , double doubleValue
-                       , String stringValue
-                       ) {
+    public boolean add(Object object) {
+        if (filledElements == objectElements.length) expand();
+        objectElements[filledElements++] = object;
         return true;
      }
 
@@ -59,15 +58,21 @@ public class List_inArraySlots {
       preserving existing data.
      */
      private void expand() {
-        System.out.println( "expand... (for debugging)");
+        // System.out.println( "expand... (for debugging)");
            /* S.O.P. rules for debugging:
               Working methods should be silent. But during
               development, the programmer must verify that
               this method is called when that is appropriate.
               So test using the println(), then comment it out.
               */
+        Object[] newObject = new Object[objectElements.length * 2];
+        for(int index = 0; index < filledElements; index++) {
+            newObject[index] = objectElements[index];
+        }
+        objectElements = newObject;
      }
      
      public Object get(int index) {
+         return objectElements[index];
      }
 }
