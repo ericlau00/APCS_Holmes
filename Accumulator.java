@@ -10,7 +10,7 @@ public class Accumulator {
       in the \list that begin with \prefix,
       each followed by a space.
      */
-    String catElementsStartingWith(
+    public static String catElementsStartingWith(
         List_inArraySlots list
       , String prefix
       ) {
