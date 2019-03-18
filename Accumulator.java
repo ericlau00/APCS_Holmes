@@ -25,26 +25,26 @@ public class Accumulator {
                elements in list when some elements of the list might
                omit support for a particular operation.
 
-               This protection is implemented by the ___________ (compiler? JVM?)
+               This protection is implemented by the _JVM_ (compiler? JVM?)
                The following code violates the restriction:
               */
-            // [code that violates the restriction]
+            // [code that violates the restriction] --> list.get(el)
 
             /*
-             predicted error message:
+             predicted error message: method not found
 
-             actual error message:
+             actual error message: Error: Could not find or load main class UserOfList.class  
              */
 
 
             /* 4.  Workaround 0
                A programmer should expect there to be a way to
                work around the stumbling block, because
-               the ___________ (compiler? JVM?)
+               the __compiler__ (compiler? JVM?)
                knows the type of an element.
 
-               Java's ___________ operator identifies the type
-               of an element to the ___________ (compiler? JVM?).
+               Java's __=__ operator identifies the type
+               of an element to the __compiler__ (compiler? JVM?).
              */
 
 
