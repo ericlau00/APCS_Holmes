@@ -44,4 +44,7 @@ public class Node {
 
     // public void setReferenceToNextNode( Node referenceToNextNode) {
     // }
+    
+    // public Object getCargoReference() {
+    // }
 }
