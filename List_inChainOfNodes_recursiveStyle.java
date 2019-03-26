@@ -25,7 +25,6 @@ public class List_inChainOfNodes_recursiveStyle{
         }
     }
 
-    
      /**
        @return a string representation of this list,
        format:
