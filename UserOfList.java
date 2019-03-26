@@ -74,6 +74,19 @@ public class UserOfList {
         System.out.println(
             "expecting:" + System.lineSeparator()
           + "[29,0,23,23,23,19, NO -1 HERE! -2,-3...]");
+
+        //addAsHead
+        System.out.println();
+        System.out.println("adding element at head");
+        list.addAsHead(17);
+        list.addAsHead(18);
+        list.addAsHead(19);
+        list.addAsHead(20);
+        list.addAsHead(21);
+        System.out.println( list);
+        System.out.println(
+            "expecting:" + System.lineSeparator()
+          + "[21,20,19,18,17,29,0,23,23...]");
     }  // end of main()
 
 

@@ -110,7 +110,7 @@ public class List_inArraySlots {
       and any subsequent elements to the right
       (that is, increase the index associated with each).
      */
-     public void add( int index, int value) {
+    public void add( int index, int value) {
         if( index == filledElements) // adding at end of list
             add( value);
         else {// need space
@@ -123,7 +123,7 @@ public class List_inArraySlots {
 
             elements[ index] = value; // store new value
         }
-     }
+    }
 
 
      /**
@@ -134,7 +134,7 @@ public class List_inArraySlots {
 
       @return the value that was removed from the list
      */
-     public int remove( int index) {
+    public int remove( int index) {
         int result = elements[ index];  // save for returning
 
         for( int put = index; put < filledElements-1; put++)
@@ -142,5 +142,10 @@ public class List_inArraySlots {
 
         filledElements--;
         return result;
-     }
+    }
+    
+    public boolean addAsHead(int val) {
+        add(0,val);
+        return true;
+    }
 }
