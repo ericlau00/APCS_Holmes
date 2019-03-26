@@ -111,19 +111,56 @@ public class List_inChainOfNodes{
         return oldValue;
     }
     
-    // /**
-      // Insert @value at position @index in this list.
-     // */
-    // public void add( int index, int value) {
-
-    // }
+    /**
+      Insert @value at position @index in this list.
+     */
+    public void add( int index, int value) {
+        Node newNode = new Node(value);
+        if (index == 0) {
+            newNode.setReferenceToNextNode(headReference);
+            headReference = newNode;
+        }
+        else {
+            int current = 0;
+            Node currentNode = headReference;
+            while (currentNode != null) {
+                if (current == index - 1) {
+                    newNode.setReferenceToNextNode(currentNode.getReferenceToNextNode());
+                    currentNode.setReferenceToNextNode(newNode);
+                }
+                current++;
+                currentNode = currentNode.getReferenceToNextNode();
+            }
+        }
+    }
     
-     // /**
-      // Remove the element at position @index in this list.
+    public void add (int value) {
+        add(this.size(), value);
+    }
+    
+     /**
+      Remove the element at position @index in this list.
 
-      // @return the value that was removed from the list
-     // */
-    // public int remove( int index) {
-
-    // }
+      @return the value that was removed from the list
+     */
+    public Object remove( int index) {
+        Object value = new Object();
+        if (index == 0) {
+            value = headReference.getCargoReference();
+            headReference = headReference.getReferenceToNextNode();
+        }
+        else {
+            int current = 0;
+            Node currentNode = headReference;
+            while (currentNode != null) {
+                if (current == index - 1) {
+                    value = currentNode.getReferenceToNextNode().getCargoReference();
+                    currentNode.setReferenceToNextNode(currentNode.getReferenceToNextNode().getReferenceToNextNode());
+                }
+                current++;
+                currentNode = currentNode.getReferenceToNextNode();
+            }
+        }
+        return value;
+    }
 }

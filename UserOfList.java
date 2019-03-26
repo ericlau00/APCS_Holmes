@@ -15,7 +15,7 @@ public class UserOfList {
         */
         int elemIndex;
         for( elemIndex = 0; elemIndex < 5; elemIndex++ ) {
-            list.addAsHead( -elemIndex); // differs from index, but similar
+            list.add( -elemIndex); // differs from index, but similar
             System.out.println( "number of elements: " + list.size() );
         }
         System.out.println("initial population of " + list.size() + " elements:");
@@ -26,7 +26,7 @@ public class UserOfList {
 
             if( list.size() == 10) System.out.println( "expansion expected");
 
-            list.addAsHead( -elemIndex);
+            list.add( -elemIndex);
             System.out.println( "number of elements: " + list.size() );
         }
         System.out.println("result of second population: " + list.size() + " elements:");
@@ -34,7 +34,7 @@ public class UserOfList {
 
         // Trust no one.
         for( ; elemIndex < 35; elemIndex++ )
-            list.addAsHead( -elemIndex);
+            list.add( -elemIndex);
         System.out.println("after second expansion: " + list.size() + " elements:");
         System.out.println( list + System.lineSeparator());
 
@@ -53,40 +53,40 @@ public class UserOfList {
         setTest( 16);
         System.out.println();
 
-        // // test adding at a specified position
-        // addAtTest( 0, 29); // beginning of the list
+        // test adding at a specified position
+        addAtTest( 0, 29); // beginning of the list
 
-        // // end of the list using the new add method
-        // addAtTest( list.size(), 17);
+        // end of the list using the new add method
+        addAtTest( list.size(), 17);
 
-        // addAtTest( 2, 19); // middle of a small list
+        addAtTest( 2, 19); // middle of a small list
 
-        // // force an expansion
-        // addAtTest( 2, 23);
-        // addAtTest( 2, 23);
-        // addAtTest( 2, 23);
-        // System.out.println();
+        // force an expansion
+        addAtTest( 2, 23);
+        addAtTest( 2, 23);
+        addAtTest( 2, 23);
+        System.out.println();
 
-        // // test removing an element
-        // System.out.println("removing value " + list.remove( 6)
-                          // + ", leaving " + list.size() + " elements:");
-        // System.out.println( list);
-        // System.out.println(
-            // "expecting:" + System.lineSeparator()
-          // + "[29,0,23,23,23,19, NO -1 HERE! -2,-3...]");
+        // test removing an element
+        System.out.println("removing value " + list.remove( 6)
+                          + ", leaving " + list.size() + " elements:");
+        System.out.println( list);
+        System.out.println(
+            "expecting:" + System.lineSeparator()
+          + "[29,0,23,23,23,19, NO -1 HERE! -2,-3...]");
 
-        // //addAsHead
-        // System.out.println();
-        // System.out.println("adding element at head");
-        // list.addAsHead(17);
-        // list.addAsHead(18);
-        // list.addAsHead(19);
-        // list.addAsHead(20);
-        // list.addAsHead(21);
-        // System.out.println( list);
-        // System.out.println(
-            // "expecting:" + System.lineSeparator()
-          // + "[21,20,19,18,17,29,0,23,23...]");
+        //addAsHead
+        System.out.println();
+        System.out.println("adding element at head");
+        list.addAsHead(17);
+        list.addAsHead(18);
+        list.addAsHead(19);
+        list.addAsHead(20);
+        list.addAsHead(21);
+        System.out.println( list);
+        System.out.println(
+            "expecting:" + System.lineSeparator()
+          + "[21,20,19,18,17,29,0,23,23...]");
     }  // end of main()
 
 
@@ -107,17 +107,17 @@ public class UserOfList {
     /**
       Test the 2-argument add( index, value) method.
      */
-    // private static void addAtTest( int addAt
-                                 // , int value
-                                 // ) {
-        // list.add( addAt, value);
-        // System.out.println(
-            // "insert " + value
-          // + " at position " + addAt
-          // + ", resulting in "  + list.size() + " elements:"
-          // + System.lineSeparator()
-          // + list
-          // + System.lineSeparator()
-        // );
-    // }
+    private static void addAtTest( int addAt
+                                 , int value
+                                 ) {
+        list.add( addAt, value);
+        System.out.println(
+            "insert " + value
+          + " at position " + addAt
+          + ", resulting in "  + list.size() + " elements:"
+          + System.lineSeparator()
+          + list
+          + System.lineSeparator()
+        );
+    }
 }
