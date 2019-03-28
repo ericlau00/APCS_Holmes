@@ -17,12 +17,8 @@ public class List_inChainOfNodes{
     }
     
     private int size(Node node) {
-        if (node == null) {
-            return 0;
-        }
-        else {
-            return 1 + size(node.getReferenceToNextNode());
-        }
+        if (node == null) return 0;
+        else return 1 + size(node.getReferenceToNextNode());
     }
 
      /**
@@ -31,20 +27,13 @@ public class List_inChainOfNodes{
            # elements [element0,element1,element2,] 
       */
     public String toString() {
-        String rep = Integer.toString(this.size()) + " elements [";
-        rep += toString(headReference);
-        rep += "]";
+        String rep = Integer.toString(this.size()) + " elements [" + toString(headReference) + "]";
         return rep;
     }
     
     private String toString(Node node) {
-        if (node == null) {
-            return "";
-        }
-        else {
-            return node.getCargoReference().toString() + "," 
-                 + toString(node.getReferenceToNextNode());
-        }
+        if (node == null) return "";
+        else return node.getCargoReference().toString() + "," + toString(node.getReferenceToNextNode());
     }
     
     /**
@@ -59,6 +48,13 @@ public class List_inChainOfNodes{
         return true;
     }
     
+    private Node getNode(int index) {
+        Node node;
+        int i;
+        for(i = 0, node = headReference; i < index; i++, node = node.getReferenceToNextNode()) { }
+        return node; 
+    }
+    
     /**
       accessor
       @return element @index from this list
@@ -68,17 +64,7 @@ public class List_inChainOfNodes{
            whether user violated the condition.)
      */
     public Object get( int index ) {
-        int current = 0;
-        Node currentNode = headReference;
-        Object getThis = new Object(); 
-        while (currentNode != null) {
-            if (current == index) {
-                getThis = currentNode.getCargoReference();
-            }
-            current++;
-            currentNode = currentNode.getReferenceToNextNode();
-        }
-        return getThis;
+        return getNode(index).getCargoReference();
     }
     
     /**
@@ -88,25 +74,16 @@ public class List_inChainOfNodes{
       @precondition: @index is within the bounds of this list.
      */
     public Object set( int index, int newValue ) {
-        Object oldValue = new Object();
+        Object oldValue = get(index);
         Node newNode = new Node(newValue);
         if (index == 0) {
-            oldValue = headReference.getCargoReference();
             newNode.setReferenceToNextNode(headReference.getReferenceToNextNode());
             headReference = newNode;
         }
         else {
-            int current = 0;
-            Node currentNode = headReference;
-            while (currentNode != null) {
-                if (current == index - 1) {
-                    oldValue = currentNode.getReferenceToNextNode().getCargoReference();
-                    newNode.setReferenceToNextNode(currentNode.getReferenceToNextNode().getReferenceToNextNode());
-                    currentNode.setReferenceToNextNode(newNode);
-                }
-                current++;
-                currentNode = currentNode.getReferenceToNextNode();
-            }
+            Node previous = getNode(index - 1);
+            newNode.setReferenceToNextNode(previous.getReferenceToNextNode().getReferenceToNextNode());
+            previous.setReferenceToNextNode(newNode);
         }
         return oldValue;
     }
@@ -115,22 +92,12 @@ public class List_inChainOfNodes{
       Insert @value at position @index in this list.
      */
     public void add( int index, int value) {
-        Node newNode = new Node(value);
-        if (index == 0) {
-            newNode.setReferenceToNextNode(headReference);
-            headReference = newNode;
-        }
+        if (index == 0) addAsHead(value);
         else {
-            int current = 0;
-            Node currentNode = headReference;
-            while (currentNode != null) {
-                if (current == index - 1) {
-                    newNode.setReferenceToNextNode(currentNode.getReferenceToNextNode());
-                    currentNode.setReferenceToNextNode(newNode);
-                }
-                current++;
-                currentNode = currentNode.getReferenceToNextNode();
-            }
+            Node newNode = new Node(value);
+            Node previous = getNode(index - 1);
+            newNode.setReferenceToNextNode(previous.getReferenceToNextNode());
+            previous.setReferenceToNextNode(newNode);
         }
     }
     
@@ -144,22 +111,11 @@ public class List_inChainOfNodes{
       @return the value that was removed from the list
      */
     public Object remove( int index) {
-        Object value = new Object();
-        if (index == 0) {
-            value = headReference.getCargoReference();
-            headReference = headReference.getReferenceToNextNode();
-        }
+        Object value = get(index);
+        if (index == 0) headReference = headReference.getReferenceToNextNode();
         else {
-            int current = 0;
-            Node currentNode = headReference;
-            while (currentNode != null) {
-                if (current == index - 1) {
-                    value = currentNode.getReferenceToNextNode().getCargoReference();
-                    currentNode.setReferenceToNextNode(currentNode.getReferenceToNextNode().getReferenceToNextNode());
-                }
-                current++;
-                currentNode = currentNode.getReferenceToNextNode();
-            }
+            Node previous = getNode(index - 1);
+            previous.setReferenceToNextNode(previous.getReferenceToNextNode().getReferenceToNextNode());
         }
         return value;
     }

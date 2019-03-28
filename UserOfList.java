@@ -49,8 +49,10 @@ public class UserOfList {
         }
 
         // test set
+        setTest(  0);
         setTest(  8);
         setTest( 16);
+        setTest(list.size() - 1);
         System.out.println();
 
         // test adding at a specified position
@@ -86,7 +88,7 @@ public class UserOfList {
         System.out.println( list);
         System.out.println(
             "expecting:" + System.lineSeparator()
-          + "[21,20,19,18,17,29,0,23,23...]");
+          + "[21,20,19,18,17,29,1000,23,23...]");
     }  // end of main()
 
 
