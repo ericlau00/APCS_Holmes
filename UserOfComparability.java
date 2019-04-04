@@ -25,8 +25,22 @@ public class UserOfComparability {
                           , new Point( 100., 2.), "negative int");
         System.out.println( "---- end of Point comparisons ----");
         
-        // System.out.println( System.lineSeparator()
-                          // + "Date comparisons");
+        System.out.println( System.lineSeparator()
+                          + "Date comparisons");
+                          
+        // Date vs. itself
+        Date d0 = new Date( 2019, 4, 4);
+        reportRelationship( "Date vs. itself", d0, d0, "0");
+
+        // Date vs. the next Date 
+        reportRelationship( "Date vs. future Date"
+                          , d0, new Date( 2019, 4, 5), "negative int");
+
+
+        // Date vs. distant Date 
+        reportRelationship( "Date vs. past Date", d0
+                          , new Date(2019,4,3), "positive int");
+        System.out.println( "---- end of Date comparisons ----");                          
     }
 
 
@@ -35,8 +49,8 @@ public class UserOfComparability {
      */
     private static void reportRelationship 
       ( String description
-      , Point a
-      , Point b
+      , Comparable a
+      , Comparable b
       , String expect
       ) {
         System.out.println( description);

@@ -1,7 +1,7 @@
 /**
   Represent a date
  */
-public class Date{
+public class Date implements Comparable{
     private int y,m,d;
     
 
@@ -19,6 +19,13 @@ public class Date{
     public String toString() {
         // someday: ISO 8601
         return y + "-" + m + "-" + d;
+    }
+    
+    public int compareTo(Object otherDate) {
+        Date other = (Date) otherDate;
+        int myDays = 365 * y + 12 * m + d;
+        int otherDays = 365 * other.y + 12 * other.m + other.d;
+        return Integer.compare(myDays, otherDays);
     }
 
 }
