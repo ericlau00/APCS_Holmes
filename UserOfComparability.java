@@ -40,7 +40,24 @@ public class UserOfComparability {
         // Date vs. distant Date 
         reportRelationship( "Date vs. past Date", d0
                           , new Date(2019,4,3), "positive int");
-        System.out.println( "---- end of Date comparisons ----");                          
+        System.out.println( "---- end of Date comparisons ----");     
+        
+        // reportRelationship( "Dogs"
+                          // , new IncomparableDog(), new IncomparableDog(), "error");
+                          
+        /*
+        UserOfComparability.java:49: error: incompatible types: IncomparableDog cannot be converted to Comparable
+                          , new IncomparableDog(), new IncomparableDog(), "error");
+        */
+        
+        // reportRelationship( "Date vs. Point", d0, p0, "error");
+        
+        /*
+        Exception in thread "main" java.lang.ClassCastException: Point cannot be cast to Date
+        at Date.compareTo(Date.java:25)
+        at UserOfComparability.reportRelationship(UserOfComparability.java:71)
+        at UserOfComparability.main(UserOfComparability.java:53)
+        */
     }
 
 
