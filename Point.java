@@ -17,7 +17,16 @@ public class Point{
            If the math is a problem, use a simpler
            relationship, like "higher is bigger"
            and change the tests accordingly */
-        return 0; // temp: all Points are One
+        Point other = (Point) otherObj;
+        double myDistance = Math.pow(
+                            xcor * xcor + 
+                            ycor * ycor,
+                            0.5);
+        double otherDistance = Math.pow(
+                            other.xcor * other.xcor + 
+                            other.ycor * other.ycor,
+                            0.5);
+        return Double.compare(myDistance,otherDistance);
     }
 
     // -------- previously-written code ----------
