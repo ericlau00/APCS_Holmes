@@ -18,7 +18,24 @@ public class OrderedList_inArraySlots
               \findMe is absent from this list.
      */
     public int indexOf( Integer findMe) {
+        return indexOf_whileStyle(findMe);
+        // return indexOf_recursiveStyle(findMe);
+    }
+    
+    private int indexOf_whileStyle( Integer findMe) {
+        for(int lowBound = 0, highBound = size() - 1;
+            lowBound <= highBound;
+            ) {
+                int pageToCheck = (lowBound + highBound) / 2;
+                if (get(pageToCheck) == findMe) return pageToCheck;
+                else if (get(pageToCheck) < findMe) lowBound = pageToCheck + 1;
+                else highBound = pageToCheck - 1;
+            }
         return -1;
+    }
+    
+    private int indexOf_recursiveStyle( Integer findMe) {
+        return - 1;
     }
     
 
