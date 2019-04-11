@@ -14,10 +14,17 @@ as of 2019-04-10 04:48
 
 #### What does its graph look like? 
 
-## 3. describe the recursive solution 
+# 3. describe the recursive solution 
 
 #### 0. State the problem 
 
-#### 1. State the recursive abstraction 
+#### 1. State the recursive abstraction
 
 #### 2. Identify the parts of this solution that correspond to the six parts of a generalized recursive solution 
+
+0. decision between the base case(s) and the recursive cases 
+1. instructions to solve the base case(s)
+2. instructions to solve the recursive cases 
+    -3. combination process 
+    -4. result of the recursive abstraction 
+    -5. leftover processing 
