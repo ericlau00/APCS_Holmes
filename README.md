@@ -24,24 +24,22 @@ as of 2019-04-10 04:48
 
 0. decision between the base cases and the recursive cases 
 ```
-        if( low > hi)  // detect base case
+        if( low > hi)  // detect base case 0 
 ```
 ```
-            if( comparison == 0)    // detect base case
+            if( comparison == 0)    // detect base case 1
 ```
 1. instructions to solve the base cases
 ```
-        if( low > hi)  // detect base case
-            return -2;   // solution to base case
+            return -2;   // solution to base case 0 
 ```
 ```
-            if( comparison == 0)    // detect base case
-                return pageToCheck; // solution other base case
+                return pageToCheck; // solution to base case 1
 ```
 2. instructions to solve the recursive cases 
-   -3. combination process 
-       -there is no combination process 
-   -4. result of the recursive abstraction 
+   - 3. combination process 
+        - there is no combination process 
+   - 4. result of the recursive abstraction 
 ```
                     return indexOf_recursive( findMe
                                              , low
@@ -52,5 +50,5 @@ as of 2019-04-10 04:48
                                             , pageToCheck +1
                                             , hi);
 ```
-   -5. leftover processing 
-       -there is no leftover processing 
+   - 5. leftover processing 
+        - there is no leftover processing 
