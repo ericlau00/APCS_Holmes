@@ -38,8 +38,8 @@ public class OrderedList_inArraySlots
         if (lowBound > highBound) return -1;
         int elementToCheck = (lowBound + highBound) / 2;
         if (get(elementToCheck).compareTo(findMe) == 0) return elementToCheck;
-        else if (get(elementToCheck).compareTo(findMe) < 0) return indexOf_recursiveStyle(findMe, lowBound+1, highBound);
-        else return indexOf_recursiveStyle(findMe, lowBound, highBound-1);
+        else if (get(elementToCheck).compareTo(findMe) < 0) return indexOf_recursiveStyle(findMe, elementToCheck+1, highBound);
+        else return indexOf_recursiveStyle(findMe, lowBound, elementToCheck-1);
     }
     
     // ------ code from previous assignments below here ----
