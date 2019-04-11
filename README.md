@@ -11,8 +11,10 @@ as of 2019-04-10 04:48
 # 2. Recall inverse functions and logarithms
 
 #### What is meant by y = log<sub>2</sub>x?
+- 2 raised to the y power (i.e. 2 multiplied by itself y times) is equal to x.
 
 #### What does its graph look like? 
+- The graph of y = log<sub>2</sub>x looks like the reflection of the graph y = 2<sup>x</sup> over the line y = x.
 
 # 3. describe the recursive solution 
 
