@@ -22,9 +22,35 @@ as of 2019-04-10 04:48
 
 #### 2. Identify the parts of this solution that correspond to the six parts of a generalized recursive solution 
 
-0. decision between the base case(s) and the recursive cases 
-1. instructions to solve the base case(s)
+0. decision between the base cases and the recursive cases 
+```
+        if( low > hi)  // detect base case
+```
+```
+            if( comparison == 0)    // detect base case
+```
+1. instructions to solve the base cases
+```
+        if( low > hi)  // detect base case
+            return -2;   // solution to base case
+```
+```
+            if( comparison == 0)    // detect base case
+                return pageToCheck; // solution other base case
+```
 2. instructions to solve the recursive cases 
-    -3. combination process 
-    -4. result of the recursive abstraction 
-    -5. leftover processing 
+   -3. combination process 
+       -there is no combination process 
+   -4. result of the recursive abstraction 
+```
+                    return indexOf_recursive( findMe
+                                             , low
+                                             , pageToCheck -1);
+```
+```
+                    return indexOf_recursive( findMe
+                                            , pageToCheck +1
+                                            , hi);
+```
+   -5. leftover processing 
+       -there is no leftover processing 
