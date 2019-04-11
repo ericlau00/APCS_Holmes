@@ -10,7 +10,7 @@ as of 2019-04-10 04:48
 
 # 2. Recall inverse functions and logarithms
 
-#### What is meant by y = log2x?
+#### What is meant by y = log<sub>2</sub>x?
 
 #### What does its graph look like? 
 
