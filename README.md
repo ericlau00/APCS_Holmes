@@ -39,6 +39,8 @@ as of 2019-04-10 04:48
 2. instructions to solve the recursive cases 
    - combination process 
      - there is no combination process 
+   - leftover processing 
+     - there is no leftover processing
    - result of the recursive abstraction 
 ```
                     return indexOf_recursive( findMe
@@ -49,6 +51,4 @@ as of 2019-04-10 04:48
                     return indexOf_recursive( findMe
                                             , pageToCheck +1
                                             , hi);
-```
-   - leftover processing 
-     - there is no leftover processing 
+``` 
