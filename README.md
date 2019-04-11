@@ -19,8 +19,10 @@ as of 2019-04-10 04:48
 # 3. describe the recursive solution 
 
 #### 0. State the problem 
+Find the index of an element in a list of ordered elements. 
 
 #### 1. State the recursive abstraction
+When asked to find the index of an element in a list of ordred elements, the recursive abstraction can find the index of the element in one half of the list of ordered elements. 
 
 #### 2. Identify the parts of this solution that correspond to the six parts of a generalized recursive solution 
 
