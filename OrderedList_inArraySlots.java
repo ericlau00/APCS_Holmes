@@ -26,19 +26,19 @@ public class OrderedList_inArraySlots
         for(int lowBound = 0, highBound = size() - 1;
             lowBound <= highBound;
             ) {
-                int pageToCheck = (lowBound + highBound) / 2;
-                if (get(pageToCheck) == findMe) return pageToCheck;
-                else if (get(pageToCheck) < findMe) lowBound = pageToCheck + 1;
-                else highBound = pageToCheck - 1;
+                int elementToCheck = (lowBound + highBound) / 2;
+                if (get(elementToCheck).compareTo(findMe) == 0) return elementToCheck;
+                else if (get(elementToCheck).compareTo(findMe) < 0 ) lowBound = elementToCheck + 1;
+                else highBound = elementToCheck - 1;
             }
         return -1;
     }
     
     private int indexOf_recursiveStyle( Integer findMe, int lowBound, int highBound) {
         if (lowBound > highBound) return -1;
-        int pageToCheck = (lowBound + highBound) / 2;
-        if (get(pageToCheck) == findMe) return pageToCheck;
-        else if (get(pageToCheck) < findMe) return indexOf_recursiveStyle(findMe, lowBound+1, highBound);
+        int elementToCheck = (lowBound + highBound) / 2;
+        if (get(elementToCheck).compareTo(findMe) == 0) return elementToCheck;
+        else if (get(elementToCheck).compareTo(findMe) < 0) return indexOf_recursiveStyle(findMe, lowBound+1, highBound);
         else return indexOf_recursiveStyle(findMe, lowBound, highBound-1);
     }
     
