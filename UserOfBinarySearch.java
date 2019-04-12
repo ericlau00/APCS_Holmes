@@ -22,14 +22,17 @@ public class UserOfBinarySearch {
         System.out.println( "search for values THAT EXIST");
         Integer findMe;  // value to find
         int foundAt;     // index where value is found
+        int comparisons; 
         System.out.println();
         for( int i = 0; i < orderedList.size(); i++) {
             findMe = orderedList.get( i);
             foundAt = orderedList.indexOf( findMe);
+            comparisons = orderedList.cost();
             System.out.println( 
                 "Value " + findMe
               + " was found at index " + foundAt
               + ". That's correct, eh? " + (foundAt == i)
+              + " number of comparisons: " + comparisons
               );
         }
         System.out.println();
@@ -52,10 +55,14 @@ public class UserOfBinarySearch {
                                , Integer value
                               ) {
         int foundAt = orderedList.indexOf( value);
+        int comparisons = orderedList.cost();
+        int expectedComparisons = (int) Math.ceil(Math.log(orderedList.size()) / Math.log(2));
         System.out.println( description + ": "
           + " value " + value
           + " \"found\" at index " + foundAt
           + ". That's correct, eh? " + (foundAt < 0)
+          + " number of comparisons: " + comparisons 
+          + " expected comparisons: " + expectedComparisons
           );
      }
 }
