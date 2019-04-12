@@ -1,4 +1,4 @@
-# implement List.indexOf
+## implement List.indexOf
 
 `while`-style and recursive implementations at the top of
 OrderedList_inArraySlots.java
@@ -8,16 +8,14 @@ OrderedList_inArraySlots.java
 based on [solutionsHolmes/5D_genericTypes/OrderedList_inArraySlots_v2/](https://github.com/stuyvesant-cs/solutionsHolmes/tree/master/5D_genericTypes/OrderedList_inArraySlots_v2)
 as of 2019-04-10 04:48
 
-# 2. Recall inverse functions and logarithms
-
+## 2. Recall inverse functions and logarithms
 #### What is meant by y = log<sub>2</sub>x?
 - 2 raised to the y power (i.e. 2 multiplied by itself y times) is equal to x.
 
 #### What does its graph look like? 
 - The graph of y = log<sub>2</sub>x looks like the reflection of the graph y = 2<sup>x</sup> over the line y = x.
 
-# 3. describe the recursive solution 
-
+## 3. describe the recursive solution 
 #### 0. State the problem 
 Find the index of an element in a list of ordered elements. 
 
@@ -25,7 +23,6 @@ Find the index of an element in a list of ordered elements.
 When asked to find the index of an element in a list of ordred elements, the recursive abstraction can find the index of the element in one half of the list of ordered elements. 
 
 #### 2. Identify the parts of this solution that correspond to the six parts of a generalized recursive solution 
-
 0. decision between the base cases and the recursive cases 
 ```
         if( low > hi)  // detect base case 0 
