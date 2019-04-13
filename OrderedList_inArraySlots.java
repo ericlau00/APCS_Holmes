@@ -17,7 +17,7 @@ public class OrderedList_inArraySlots
      */
     public OrderedList_inArraySlots
             ( ArrayList<Integer> unordered) {
-        this();
+        list_iAS = new ArrayList<Integer>();
         for(int elementsToSort = unordered.size();
             elementsToSort > 0;
             elementsToSort--) {
