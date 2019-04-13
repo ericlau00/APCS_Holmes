@@ -9,11 +9,13 @@ based on [solutionsHolmes/5D_genericTypes/OrderedList_inArraySlots_v2/](https://
 as of 2019-04-10 04:48
 
 ## 2. Recall inverse functions and logarithms
-#### What is meant by y = log<sub>2</sub>x?
-- 2 raised to the y power (i.e. 2 multiplied by itself y times) is equal to x.
+#### What is meant by count = log<sub>2</sub>n?
+- 2 raised to the count power (i.e. 2 multiplied by itself count times) is equal to n.
+- It represents the number of times to halve n to get it equal to 1. 
 
 #### What does its graph look like? 
-- The graph of y = log<sub>2</sub>x looks like the reflection of the graph y = 2<sup>x</sup> over the line y = x.
+- The graph of count = log<sub>2</sub>n looks like the reflection of the graph y = 2<sup>x</sup> over the line y = x.
+- The only inputs of n that are valid are positive integer inputs [0,1,2,3,4,5...] because it does not make sense to look at negative sized lists, nor does it makes sense to look at lists with decimal sizes.
 
 ## 3. describe the recursive solution 
 #### 0. State the problem 
