@@ -14,16 +14,23 @@ is done in-place.
 
 0. If the number of the elements in the input triples,
 the time required to run the reigning champ algorithm
-will grow by __________________.
+will grow by three times. The loop in the reigning champ
+has to loop through every element once, and thus it will
+have to loop through three times the number of elements, 
+taking three times as long. 
 [Justify, in about 2 sentences.]
 
 0. If the number of the elements in the input triples,
 the number of times that the reigning champ algorithm
-will be invoked 
-will grow by __________________.
+will be invoked will grow by three times beucase the 
+algorithm has to lop through every element once. This 
+means that the loop will go through three times as 
+many elements. 
 [Justify, in about 2 sentences.]
 
 0. If the number of the elements in the input triples,
 the time required for the selection sort
-will grow by __________________.
+will grow by 9 times. If each invocation of reigning champ triples,
+and the algorithm is invoked 3 more times, then the resulting time
+should be the product of the two multipliers. 
 [Justify, in about 2 sentences.]
