@@ -72,6 +72,11 @@ public class List_inChainOfNodes{
      */
     public boolean addAsHead( Object val) {
         return add(0,val);
+        
+        // Node newNode = new Node(val, sentinel, sentinel.getNextNode());
+        // sentinel.getNextNode().setPrevNode(newNode);
+        // sentinel.setNextNode(newNode);
+        // return true; 
      }
 
 
