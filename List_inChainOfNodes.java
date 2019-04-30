@@ -3,16 +3,15 @@
  */
 
 public class List_inChainOfNodes{
-    private Node headSentinel;
-    private Node endSentinel;
+    private Node sentinel;
 
     /**
       Construct an empty list
      */
     public List_inChainOfNodes() {
-        headSentinel = new Node( null, null);
-        endSentinel = new Node( null, headSentinel, null);
-        headSentinel.setNextNode(endSentinel);
+        sentinel = new Node( null, null);
+        sentinel.setNextNode(sentinel);
+        sentinel.setPrevNode(sentinel);
     }
 
     /**
@@ -20,13 +19,13 @@ public class List_inChainOfNodes{
      */
     public int size() {
         // recursive approach seems more perspicuous
-        return size( headSentinel) - 1;
+        return size( sentinel);
     }
 
     // recursively-called helper
     private int size( Node startingAt) {
         Node next = startingAt.getNextNode();
-        if( next == null) return 0;
+        if( next == sentinel) return 0;
         else return 1+ size( next);
     }
 
@@ -39,8 +38,8 @@ public class List_inChainOfNodes{
     // public String toString() {
         // String stringRep = size() + " elements [";
 
-        // for( Node node = headSentinel.getNextNode()
-           // ; node != null && node != endSentinel
+        // for( Node node = sentinel.getNextNode()
+           // ; node != sentinel
            // ; node = node.getNextNode() )
             // stringRep += node.getCargo() + ",";
         // return stringRep + "]";
@@ -58,8 +57,8 @@ public class List_inChainOfNodes{
     public String toString() {
         String stringRep = "tail-first [";
 
-        for( Node node = endSentinel.getPrevNode()
-           ; node != null && node != headSentinel
+        for( Node node = sentinel.getPrevNode()
+           ; node != sentinel
            ; node = node.getPrevNode() 
            )
             stringRep += node.getCargo() + "`";
@@ -86,7 +85,7 @@ public class List_inChainOfNodes{
            
         Node node;
         int upTo;  // comma operator precludes declaration in FOR
-        for( upTo = 0   , node = headSentinel
+        for( upTo = 0   , node = sentinel
            ; upTo < index
            ; upTo++     , node = node.getNextNode()
            )
