@@ -9,7 +9,6 @@ public class Node {
     private Object cargo;
     private Node nextNode;
 
-
     /**
       Construct an instance
      */

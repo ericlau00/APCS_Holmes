@@ -6,7 +6,6 @@ public class List_inChainOfNodes{
     private Node headSentinel;
     private Node endSentinel;
 
-     
     /**
       Construct an empty list
      */
@@ -32,49 +31,48 @@ public class List_inChainOfNodes{
     }
 
 
-     /**
-       @return a string representation of this list,
-       format:
-           # elements [element0,element1,element2,]
-      */
-    public String toString() {
-        String stringRep = size() + " elements [";
-
-        for( Node node = headSentinel.getNextNode()
-           ; node != null && node != endSentinel
-           ; node = node.getNextNode() )
-            stringRep += node.getCargo() + ",";
-        return stringRep + "]";
-    }
-
-    // /**
-      // Demo use of links to previous Nodes.
-
-      // @return a string representation of this list,
-              // iterating through the list
-              // from tail to head.
-      // format, using ` as separator
-          // [element0`element1`element2`]
-     // */
+     // /**
+       // @return a string representation of this list,
+       // format:
+           // # elements [element0,element1,element2,]
+      // */
     // public String toString() {
-        // String stringRep = "tail-first [";
+        // String stringRep = size() + " elements [";
 
-        // for( Node node =
-                 // ...your code here...
-           // )
-            // stringRep += node.getCargo() + "`";
+        // for( Node node = headSentinel.getNextNode()
+           // ; node != null && node != endSentinel
+           // ; node = node.getNextNode() )
+            // stringRep += node.getCargo() + ",";
         // return stringRep + "]";
     // }
+
+    /**
+      Demo use of links to previous Nodes.
+
+      @return a string representation of this list,
+              iterating through the list
+              from tail to head.
+      format, using ` as separator
+          [element0`element1`element2`]
+     */
+    public String toString() {
+        String stringRep = "tail-first [";
+
+        for( Node node = endSentinel.getPrevNode()
+           ; node != null && node != headSentinel
+           ; node = node.getPrevNode() 
+           )
+            stringRep += node.getCargo() + "`";
+        return stringRep + "]";
+    }
 
     /**
       Append @value to the head of this list.
 
       @return true, in keeping with conventions yet to be discussed
      */
-     public boolean addAsHead( Object val) {
-        headSentinel.setNextNode(
-          new Node( val, headSentinel, headSentinel.getNextNode()));
-        return true;
+    public boolean addAsHead( Object val) {
+        return add(0,val);
      }
 
 
