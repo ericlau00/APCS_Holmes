@@ -45,6 +45,12 @@ public class UserOfSorts {
             113,115,111,116,114,112
             )
         );
+            
+        ArrayList<String> soup = new ArrayList<String>(
+            Arrays.asList(
+            "C","F","J","M","D","B","P","A"
+            )
+        );
 
         // insertion sort   
         /**
@@ -60,6 +66,10 @@ public class UserOfSorts {
         **/
         oneTest( "selection sort "
                 , new SelectionSorter<Integer>(scramble)
+                );
+                
+        oneTest( "selection sort "
+                , new SelectionSorter<String>(soup)
                 );
     }
 
