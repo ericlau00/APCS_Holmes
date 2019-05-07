@@ -7,6 +7,9 @@ import java.util.ArrayList;
 public class UserOfSorts {
     public static void main(String[] commandLine) {
         // arrays to be sorted
+        /**
+            sets up String data to be sorted, stored in an ArrayList<String>
+        **/
         ArrayList< String> unsorted = new ArrayList< String>(
           /* Java's Arrays.asList provides a perspicuous
              way to build a Collection from literals,
@@ -37,9 +40,12 @@ public class UserOfSorts {
             , "Z"  
             ));
 
-        // insertion sort                   
+        // insertion sort   
+        /**
+            constructs an InsertionSorter based on that data
+        **/
         oneTest( "insertion sort "
-               , new InsertionSorter( unsorted)
+               , new InsertionSorter<String>( unsorted)
                );
     }
 
@@ -51,8 +57,14 @@ public class UserOfSorts {
                                , Sorter sorter
                                ) {
         System.out.println( System.lineSeparator() + description);
+        /**
+            invokes that Sorter’s mySort method, to sort the data
+        **/
         sorter.mySort();
         System.out.println( sorter);
+        /**
+            checks that the result is correctly sorted.
+        **/
         System.out.println( "sorted: " + sorter.isSorted());
      }
 }

@@ -4,14 +4,14 @@
  */
 import java.util.ArrayList;
 
-abstract class Sorter {
-    protected ArrayList< String> elements;
+abstract class Sorter<T extends Comparable<T>> {
+    protected ArrayList<T> elements;
     
     /**
       Construct an instance, saving a reference to the 
       user's data
      */
-    public Sorter( ArrayList< String> usersData) {
+    public Sorter( ArrayList<T> usersData) {
         elements = usersData;
     }
     
@@ -28,7 +28,7 @@ abstract class Sorter {
      */
     public String toString() {
         String result = "[";
-        for( String e : elements)
+        for( T e : elements)
             result += e + ",";
         return result + "]";
     }
