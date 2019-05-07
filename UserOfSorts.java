@@ -39,6 +39,12 @@ public class UserOfSorts {
                */
             , "Z"  
             ));
+         
+        ArrayList<Integer> scramble = new ArrayList<Integer>(
+            Arrays.asList(
+            113,115,111,116,114,112
+            )
+        );
 
         // insertion sort   
         /**
@@ -47,6 +53,14 @@ public class UserOfSorts {
         oneTest( "insertion sort "
                , new InsertionSorter<String>( unsorted)
                );
+               
+        // selection sort 
+        /**
+            constructs a SelectionSorter based on that data 
+        **/
+        oneTest( "selection sort "
+                , new SelectionSorter<Integer>(scramble)
+                );
     }
 
 
