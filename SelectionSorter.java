@@ -17,15 +17,22 @@ public class SelectionSorter<T extends Comparable<T>> extends Sorter<T> {
         selectionSort();
     }
     
+    /**
+    pre-condition: a list of n elements
+    synopsis: runs select method from index 0 to index n-2
+    post-condition: a sorted list of n elements 
+    **/
     private void selectionSort() {
-        for(int elementsSorted = 0; elementsSorted <elements.size()-1; elementsSorted++) {
-            int smallestIndex = select(elementsSorted);
-            T smallest = elements.get(smallestIndex);
-            elements.set(smallestIndex, elements.set(elementsSorted, smallest));
-        }
+        for(int elementsSorted = 0; elementsSorted <elements.size()-1; select(eelementsSorted), elementsSorted++) { }
     }
-    
-    private int select(int elementsSorted) {
+
+    /**
+    pre-condition: a list of elements with n elements in the sorted region. 
+    synopsis: finds the value of the smallest element in the unsorted region.
+              swaps the value at the beginning of the unsorted region with the smallest value. 
+    post-condition: a list of elements with n + 1 elements in the sorted region. 
+    **/  
+    private void select(int elementsSorted) {
         T smallest = elements.get(elementsSorted);
         int smallestIndex = elementsSorted;
         for(int indexToCompare = elementsSorted; indexToCompare<elements.size(); indexToCompare++){
@@ -34,6 +41,6 @@ public class SelectionSorter<T extends Comparable<T>> extends Sorter<T> {
                 smallest = elements.get(indexToCompare);
             }
         }
-        return smallestIndex;    
+        elements.set(smallestIndex, elements.set(elementsSorted, smallest));
     }
 }

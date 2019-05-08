@@ -19,10 +19,21 @@ public class InsertionSorter<T extends Comparable<T>> extends Sorter<T> {
         insertionSort();
     }
 
+    /**
+    pre-condition: a list of n elements 
+    synopsis: runs the insert method on all of the elements in the list starting at element 1. 
+    post-condition: a sorted list of n elements 
+    **/
     private void insertionSort() {
         for(int indexToInsert = 1; indexToInsert < elements.size(); insert(indexToInsert), indexToInsert++) { }
     }
     
+    /**
+    pre-condition: a list of elements with n elements sorted. 
+    synopsis: insert the first element in the unsorted region into the correct spot in the sorted region.
+              shift larger elements. 
+    post-condition: a list of elements with n + 1 elements sorted. 
+    **/
     private void insert(int indexToInsert) {
         T valueToInsert = elements.get(indexToInsert);
         int indexToCompare = indexToInsert - 1;
