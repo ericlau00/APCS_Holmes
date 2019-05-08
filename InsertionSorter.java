@@ -16,20 +16,20 @@ public class InsertionSorter<T extends Comparable<T>> extends Sorter<T> {
       sort the user's data, implementing insertion sort
      */
     public void mySort() {
-        insertionSort(elements);
+        insertionSort();
     }
 
-    private <T extends Comparable<T>> void insertionSort(ArrayList<T> list) {
-        for(int indexToInsert = 1; indexToInsert < list.size(); insert(indexToInsert, list), indexToInsert++) { }
+    private void insertionSort() {
+        for(int indexToInsert = 1; indexToInsert < elements.size(); insert(indexToInsert), indexToInsert++) { }
     }
     
-    private <T extends Comparable<T>> void insert(int indexToInsert, ArrayList<T> list ) {
-        T valueToInsert = list.get(indexToInsert);
+    private void insert(int indexToInsert) {
+        T valueToInsert = elements.get(indexToInsert);
         int indexToCompare = indexToInsert - 1;
         for(;
-            indexToCompare > -1 && valueToInsert.compareTo(list.get(indexToCompare)) < 0;
-            list.set(indexToCompare+1, list.get(indexToCompare)), indexToCompare--
+            indexToCompare > -1 && valueToInsert.compareTo(elements.get(indexToCompare)) < 0;
+            elements.set(indexToCompare+1, elements.get(indexToCompare)), indexToCompare--
             ) { }
-        list.set(indexToCompare+1, valueToInsert); 
+        elements.set(indexToCompare+1, valueToInsert); 
     }
 }

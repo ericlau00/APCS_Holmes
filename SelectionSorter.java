@@ -14,21 +14,26 @@ public class SelectionSorter<T extends Comparable<T>> extends Sorter<T> {
       sort the user's data, implementing insertion sort
      */
     public void mySort() {
-        selectionSort(elements);
+        selectionSort();
     }
     
-    private <T extends Comparable<T>> void selectionSort(ArrayList<T> list) {
-        for(int elementsSorted = 0; elementsSorted <list.size()-1; elementsSorted++) {
-            T smallest = list.get(elementsSorted);
-            int smallestIndex = elementsSorted;
-            for(int indexToCompare = elementsSorted; indexToCompare<list.size(); indexToCompare++) {
-                if(smallest.compareTo(list.get(indexToCompare)) > 0) {
-                    smallestIndex = indexToCompare;
-                    smallest = list.get(indexToCompare);
-                }
-            }
-            list.set(smallestIndex, list.get(elementsSorted));
-            list.set(elementsSorted, smallest);
+    private void selectionSort() {
+        for(int elementsSorted = 0; elementsSorted <elements.size()-1; elementsSorted++) {
+            int smallestIndex = select(elementsSorted);
+            T smallest = elements.get(smallestIndex);
+            elements.set(smallestIndex, elements.set(elementsSorted, smallest));
         }
+    }
+    
+    private int select(int elementsSorted) {
+        T smallest = elements.get(elementsSorted);
+        int smallestIndex = elementsSorted;
+        for(int indexToCompare = elementsSorted; indexToCompare<elements.size(); indexToCompare++){
+            if(smallest.compareTo(elements.get(indexToCompare)) > 0) {
+                smallestIndex = indexToCompare;
+                smallest = elements.get(indexToCompare);
+            }
+        }
+        return smallestIndex;    
     }
 }
