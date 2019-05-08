@@ -23,7 +23,7 @@ public class SelectionSorter<T extends Comparable<T>> extends Sorter<T> {
     post-condition: a sorted list of n elements 
     **/
     private void selectionSort() {
-        for(int elementsSorted = 0; elementsSorted <elements.size()-1; select(eelementsSorted), elementsSorted++) { }
+        for(int elementsSorted = 0; elementsSorted <elements.size()-1; select(elementsSorted), elementsSorted++) { }
     }
 
     /**
