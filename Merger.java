@@ -25,8 +25,7 @@ public class Merger {
         int start0  // index of first item in list0
       , int start1  // index of first item in list1
                     // = just past end of list0
-      , int nItems  // number of items in the merged list
-                    // = just past end of list1
+      , int end1    // index past end of list1
       ) {
     }
 
@@ -48,7 +47,14 @@ public class Merger {
            ; i < endBefore -1 // stop early, because comparing to next
            ; i++
            )
-            if( usersData.get(i).compareTo( usersData.get(i+1)) > 0) return false;
+            if( usersData.get(i).compareTo( usersData.get(i+1)) > 0) {
+                System.out.println( "trouble between position " + i 
+                                  + ", which holds " + usersData.get(i)
+                                  + ", and position " + (i +1)
+                                  + ", which holds " + usersData.get(i +1)
+                                  );
+                return false;
+            }
         return true;
     }
 }

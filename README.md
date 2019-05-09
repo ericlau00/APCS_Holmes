@@ -34,5 +34,5 @@ So start your merge procedure by allocating storage to hold
 a copy of the data. Copy the data, then
 merge from the copy into the range whence it arrived.
 
->You are of course welcome to look into in-place merges.
+>You are welcome to look into in-place merges, of course .
 But get this merge working first.
