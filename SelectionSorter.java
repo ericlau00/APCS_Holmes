@@ -2,11 +2,11 @@
   Implement a selection sort, in the Sorters structure
  */
 import java.util.ArrayList;
-public class SelectionSorter<T extends Comparable<T>> extends Sorter<T> {
+public class SelectionSorter extends Sorter{
     /**
       Construct an instance to process the user's data
      */
-    public SelectionSorter(  ArrayList<T> usersData) {
+    public SelectionSorter(  ArrayList<String> usersData) {
         super(usersData);
     }
     
@@ -33,7 +33,7 @@ public class SelectionSorter<T extends Comparable<T>> extends Sorter<T> {
     post-condition: a list of elements with n + 1 elements in the sorted region. 
     **/  
     private void select(int elementsSorted) {
-        T smallest = elements.get(elementsSorted);
+        String smallest = elements.get(elementsSorted);
         int smallestIndex = elementsSorted;
         for(int indexToCompare = elementsSorted; indexToCompare<elements.size(); indexToCompare++){
             if(smallest.compareTo(elements.get(indexToCompare)) > 0) {

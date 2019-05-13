@@ -40,11 +40,6 @@ public class UserOfSorts {
             , "Z"  
             ));
          
-        ArrayList<Integer> scramble = new ArrayList<Integer>(
-            Arrays.asList(
-            113,115,111,116,114,112
-            )
-        );
             
         ArrayList<String> soup = new ArrayList<String>(
             Arrays.asList(
@@ -52,27 +47,53 @@ public class UserOfSorts {
             )
         );
 
+        ArrayList<String> base = new ArrayList<String>(
+            Arrays.asList(
+            "0"
+            )
+        );
+        
+        ArrayList<String> minimal = new ArrayList<String>(
+            Arrays.asList(
+            "1","0"
+            )
+        );
+        
+        ArrayList<String> scramble = new ArrayList<String>(
+            Arrays.asList(
+            "1","0","2","3"
+            )
+        );
+        
         // insertion sort   
         /**
             constructs an InsertionSorter based on that data
         **/
         oneTest( "insertion sort "
-               , new InsertionSorter<String>( unsorted)
+               , new InsertionSorter( unsorted)
                );
                
         // selection sort 
         /**
             constructs a SelectionSorter based on that data 
         **/
-        oneTest( "selection sort "
-                , new SelectionSorter<Integer>(scramble)
-                );
                 
         oneTest( "selection sort "
-                , new SelectionSorter<String>(soup)
+                , new SelectionSorter(soup)
+                );
+    
+        oneTest( "merge sort "
+                , new SelectionSorter(base)
+                );
+    
+        oneTest( "merge sort "
+                , new SelectionSorter(minimal)
+                );
+        
+        oneTest( "merge sort "
+                , new SelectionSorter(scramble)
                 );
     }
-
 
     /** 
      Run one test

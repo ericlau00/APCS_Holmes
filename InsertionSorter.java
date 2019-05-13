@@ -3,12 +3,12 @@
  */
 import java.util.ArrayList;
 
-public class InsertionSorter<T extends Comparable<T>> extends Sorter<T> {
+public class InsertionSorter extends Sorter {
 
     /**
       Construct an instance to process the user's data
      */
-    public InsertionSorter(  ArrayList<T> usersData) {
+    public InsertionSorter(  ArrayList<String> usersData) {
         super(usersData);
     }
     
@@ -35,7 +35,7 @@ public class InsertionSorter<T extends Comparable<T>> extends Sorter<T> {
     post-condition: a list of elements with n + 1 elements sorted. 
     **/
     private void insert(int indexToInsert) {
-        T valueToInsert = elements.get(indexToInsert);
+        String valueToInsert = elements.get(indexToInsert);
         int indexToCompare = indexToInsert - 1;
         for(;
             indexToCompare > -1 && valueToInsert.compareTo(elements.get(indexToCompare)) < 0;
