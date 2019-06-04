@@ -42,7 +42,7 @@ public class BoardForQueensPuzzle {
                      no queen attacked another.
      */
     public boolean lastIsNg() {
-        if (lastRankFilled < 0) return false;
+        if (lastRankFilled < 1) return false;
         else return true;
     }
 

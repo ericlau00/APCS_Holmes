@@ -42,12 +42,12 @@ public class UserOfBoard {
         // ----- next incremental step ends here -----
 
 
-        // System.out.println( "no solution could start with "
-                          // + "a single-queen board: "
-                          // + b.lastIsNg()
-                          // + " ...expecting false"
-                          // + System.lineSeparator());
-        // // ----- next incremental step ends here -----
+        System.out.println( "no solution could start with "
+                          + "a single-queen board: "
+                          + b.lastIsNg()
+                          + " ...expecting false"
+                          + System.lineSeparator());
+        // ----- next incremental step ends here -----
 
 
         // System.out.println( "Add a queen a knights-move away.");
