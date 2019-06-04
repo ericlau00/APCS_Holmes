@@ -10,14 +10,14 @@ public class UserOfBoard {
         BoardForQueensPuzzle b = new BoardForQueensPuzzle( 3);
 
 
-        // System.out.println( "width and length of the board: "
-                          // + b.ranks()
-                          // + " ...expecting 3"
-                          // + System.lineSeparator());
+        System.out.println( "width and length of the board: "
+                          + b.ranks()
+                          + " ...expecting 3"
+                          + System.lineSeparator());
 
-        // System.out.println( "toString for an empty board:");
-        // System.out.println( b + System.lineSeparator());
-        // // ----- next incremental step ends here -----
+        System.out.println( "toString for an empty board:");
+        System.out.println( b + System.lineSeparator());
+        // ----- next incremental step ends here -----
 
 
         // System.out.println( "no solution could start with "
