@@ -43,7 +43,9 @@ public class BoardForQueensPuzzle {
      */
     public boolean lastIsNg() {
         if (lastRankFilled < 1) return false;
-        else return true;
+        for(int rank = 0; rank < lastRankFilled; rank++) 
+            if (filesWithQueens[rank] == filesWithQueens[lastRankFilled]) return true;   
+        return false;
     }
 
 
