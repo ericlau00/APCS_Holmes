@@ -16,7 +16,6 @@ public class BoardForQueensPuzzle {
       in List_inArraySlots exactly the same way.
       */
 
-
     /**
       Construct an empty instance of the specified size
      */
@@ -25,14 +24,12 @@ public class BoardForQueensPuzzle {
         lastRankFilled = -1;
     }
 
-
     /**
       @return the size of the board
      */
     public int ranks() {
-        return filesWithQueens.length;   // invalid value
+        return filesWithQueens.length;
     }
-
 
     /**
       @return the boolean value of the statement
@@ -49,7 +46,6 @@ public class BoardForQueensPuzzle {
         return false;
     }
 
-
     /**
       @return the boolean value of the statement...
                 "The board is fully and legally populated."
@@ -65,14 +61,12 @@ public class BoardForQueensPuzzle {
         return lastRankFilled == filesWithQueens.length-1 && !lastIsNg();
     }
 
-
     /**
       Populate the next rank with a queen in position @file
      */
     public void populate( int file) {
         filesWithQueens[++lastRankFilled] = file; 
     }
-
 
     /**
       Un-do a populate(), to have no queen in the
@@ -82,7 +76,6 @@ public class BoardForQueensPuzzle {
     public void depopulate() {
         lastRankFilled--; 
     }
-
 
     // ----- skeletal code below here needs no modification -----
     private static final String INDENT = "         ";
