@@ -22,6 +22,7 @@ public class BoardForQueensPuzzle {
      */
     public BoardForQueensPuzzle( int ranks) {
         filesWithQueens = new int[ranks];
+        lastRankFilled = -1;
     }
 
 
@@ -41,7 +42,8 @@ public class BoardForQueensPuzzle {
                      no queen attacked another.
      */
     public boolean lastIsNg() {
-        return true;
+        if (lastRankFilled < 0) return false;
+        else return true;
     }
 
 

@@ -20,12 +20,12 @@ public class UserOfBoard {
         // ----- next incremental step ends here -----
 
 
-        // System.out.println( "no solution could start with "
-                          // + "an empty board: "
-                          // + b.lastIsNg()
-                          // + " ...expecting false"
-                          // + System.lineSeparator());
-        // // ----- next incremental step ends here -----
+        System.out.println( "no solution could start with "
+                          + "an empty board: "
+                          + b.lastIsNg()
+                          + " ...expecting false"
+                          + System.lineSeparator());
+        // ----- next incremental step ends here -----
 
 
         // System.out.println( "an empty size " + b.ranks()
