@@ -70,8 +70,7 @@ public class BoardForQueensPuzzle {
       Populate the next rank with a queen in position @file
      */
     public void populate( int file) {
-        lastRankFilled++;
-        filesWithQueens[lastRankFilled] = file; 
+        filesWithQueens[++lastRankFilled] = file; 
     }
 
 
