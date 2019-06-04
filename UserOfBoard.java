@@ -28,12 +28,12 @@ public class UserOfBoard {
         // ----- next incremental step ends here -----
 
 
-        // System.out.println( "an empty size " + b.ranks()
-                          // + " board is acceptable as a solution: "
-                          // + b.accept()
-                          // + " ...expecting false"
-                          // + System.lineSeparator());
-        // // ----- next incremental step ends here -----
+        System.out.println( "an empty size " + b.ranks()
+                          + " board is acceptable as a solution: "
+                          + b.accept()
+                          + " ...expecting false"
+                          + System.lineSeparator());
+        // ----- next incremental step ends here -----
 
 
         // System.out.println( "queen in top left corner");

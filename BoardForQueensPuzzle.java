@@ -59,7 +59,7 @@ public class BoardForQueensPuzzle {
         This method checks the last-filled rank.
      */
     public boolean accept() {
-        return false;
+        return lastIsNg();
     }
 
 
