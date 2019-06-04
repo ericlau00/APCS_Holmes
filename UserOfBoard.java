@@ -36,10 +36,10 @@ public class UserOfBoard {
         // ----- next incremental step ends here -----
 
 
-        // System.out.println( "queen in top left corner");
-        // b.populate( 0);
-        // System.out.println( b + System.lineSeparator());
-        // // ----- next incremental step ends here -----
+        System.out.println( "queen in top left corner");
+        b.populate( 0);
+        System.out.println( b + System.lineSeparator());
+        // ----- next incremental step ends here -----
 
 
         // System.out.println( "no solution could start with "
