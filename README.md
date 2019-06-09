@@ -3,18 +3,9 @@
 ## Eric Lau's remarks
 
 ### citations / worked with / received help from
-Replace this paragraph with a solid accounting of your sources.
-People have become either lackadaisical or dishonest
-about crediting others for ideas and help. 
-If I grade this work, I will rely on this section as
-a complete listing for judging academic honesty.
+* I referred to official Java documentation when replying to Piazza thread [@480](https://piazza.com/class/jlygg7rkooq77d?cid=480).
 
-This list may omit sources common to everyone in the course,
-including...
-* Piazza threads
-* class-wide discussions
-* communication with Holmes via the class
-web site or GitHub repos.
+I did not work with anyone nor did I receive help from any other sources outside of the ones that are to be omitted (e.g. Piazza). 
 
 
 ## Holmes's remarks
