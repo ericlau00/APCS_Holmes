@@ -57,21 +57,34 @@ public class SolverForQueensPuzzle {
          that starts -- and ends -- with that board.
      */
     private void recordSolutionsStarted() {
-
-        // Which has been requested, a base case or recursive case?
-            // your code here
-            // action(s) for base case(s)
-            System.out.println( "  for debugging: base case detected for..."
-                              + System.lineSeparator()
-                              + inProgress
-                              );
-
-            // action for recursive cases
-            // your code here
-            System.out.println( "  for debugging: recursive case detected for..."
-                              + System.lineSeparator()
-                              + inProgress
-                              );
+        // action(s) for base case(s)
+        if(inProgress.lastIsNg()) {
+            // System.out.println( "  for debugging: base case not legal detected for..."
+                              // + System.lineSeparator()
+                              // + inProgress
+                              // );
+            nBoardsConsidered++;
+        }
+        else if(inProgress.accept()) {
+            // System.out.println( "  for debugging: base case complete detected for..."
+                              // + System.lineSeparator()
+                              // + inProgress
+                              // );
+            solutions.add(new BoardForQueensPuzzle(inProgress));
+            nBoardsConsidered++;
+        }       
+        // action for recursive cases
+        else {
+            // System.out.println( "  for debugging: recursive case detected for..."
+                              // + System.lineSeparator()
+                              // + inProgress
+                              // );
+                for(int file = 0; file < inProgress.ranks(); file++) {
+                    inProgress.populate(file);
+                    recordSolutionsStarted();
+                    inProgress.depopulate();
+                }
+        }    
     }
 
 
