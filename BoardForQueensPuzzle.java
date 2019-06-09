@@ -152,6 +152,8 @@ public class BoardForQueensPuzzle {
             )
           + ", in board with ID "
           + String.format( "%x", this.hashCode())
+          + " with filesWithQueens "
+          + String.format( "%x", filesWithQueens.hashCode())
           + System.lineSeparator();
 
         // short-circuit the picture for a zero-sized board

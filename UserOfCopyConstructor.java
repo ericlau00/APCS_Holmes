@@ -16,6 +16,7 @@ public class UserOfCopyConstructor {
         // Create the board that will be changed
         BoardForQueensPuzzle changeMe = new BoardForQueensPuzzle( 3);
         changeMe.populate(2);
+        changeMe.populate(0);
         System.out.println( "Before change, the original is..."
                           + System.lineSeparator()
                           + changeMe
@@ -28,10 +29,21 @@ public class UserOfCopyConstructor {
                           + snapshot
                           );
 
-        // change the original
-        changeMe.populate(0);
+        // shrink the original
+        changeMe.depopulate();
 
-        System.out.println( "after change, the original is..."
+        System.out.println( "after depopulation, the original is..."
+                          + System.lineSeparator()
+                          + changeMe + System.lineSeparator()
+                          + "...and the snapshot is..."
+                          + System.lineSeparator()
+                          + snapshot
+                          );
+                          
+        // re-populate the original, but into a different file
+        changeMe.populate(1);
+
+        System.out.println( "after re-population, the original is..."
                           + System.lineSeparator()
                           + changeMe + System.lineSeparator()
                           + "...and the snapshot is..."
