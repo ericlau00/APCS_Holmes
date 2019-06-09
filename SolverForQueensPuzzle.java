@@ -63,7 +63,6 @@ public class SolverForQueensPuzzle {
                               // + System.lineSeparator()
                               // + inProgress
                               // );
-            nBoardsConsidered++;
         }
         else if(inProgress.accept()) {
             // System.out.println( "  for debugging: base case complete detected for..."
@@ -71,7 +70,6 @@ public class SolverForQueensPuzzle {
                               // + inProgress
                               // );
             solutions.add(new BoardForQueensPuzzle(inProgress));
-            nBoardsConsidered++;
         }       
         // action for recursive cases
         else {
@@ -79,11 +77,12 @@ public class SolverForQueensPuzzle {
                               // + System.lineSeparator()
                               // + inProgress
                               // );
-                for(int file = 0; file < inProgress.ranks(); file++) {
-                    inProgress.populate(file);
-                    recordSolutionsStarted();
-                    inProgress.depopulate();
-                }
+            for(int file = 0; file < inProgress.ranks(); file++) {
+                inProgress.populate(file);
+                nBoardsConsidered++;
+                recordSolutionsStarted();
+                inProgress.depopulate();
+            }
         }    
     }
 

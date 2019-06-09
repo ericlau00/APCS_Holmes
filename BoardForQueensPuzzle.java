@@ -150,6 +150,8 @@ public class BoardForQueensPuzzle {
               ? "unpopulated"
               : "populated through rank " + lastRankFilled
             )
+          + ", in board with ID "
+          + String.format( "%x", this.hashCode())
           + System.lineSeparator();
 
         // short-circuit the picture for a zero-sized board
