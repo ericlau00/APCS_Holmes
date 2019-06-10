@@ -57,6 +57,7 @@ public class SolverForQueensPuzzle {
          that starts -- and ends -- with that board.
      */
     private void recordSolutionsStarted() {
+        nBoardsConsidered++;
         // action(s) for base case(s)
         if(inProgress.lastIsNg()) {
             // System.out.println( "  for debugging: base case not legal detected for..."
@@ -79,7 +80,6 @@ public class SolverForQueensPuzzle {
                               // );
             for(int file = 0; file < inProgress.ranks(); file++) {
                 inProgress.populate(file);
-                nBoardsConsidered++;
                 recordSolutionsStarted();
                 inProgress.depopulate();
             }
