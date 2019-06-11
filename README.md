@@ -4,7 +4,7 @@
 
 ### citations / worked with / received help from
 * I referred to official Java documentation when replying to Piazza thread [@480](https://piazza.com/class/jlygg7rkooq77d?cid=480).
-* heavily monitored and thought about Piazza thread [@479]((https://piazza.com/class/jlygg7rkooq77d?cid=479).
+* heavily monitored and thought about Piazza thread [@479](https://piazza.com/class/jlygg7rkooq77d?cid=479).
 * Spoke with Saad Islam Bhuiyan about placement of nBoardsConsidered incrementation and moved placement outside of action of recursive cases to also count an empty board.
 * Spoke with Jason Lam in class about memory diagrams and made the observation that I should specify my post-snapshot value changes with a color and key. 
 * Helped Franklin Liou on fixing his memory diagrams
