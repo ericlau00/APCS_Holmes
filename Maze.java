@@ -61,25 +61,15 @@ public class Maze {
     }
     
     public int[] getStart() {return start;}
-    
-    public int[] getEnd() {return end;}
-    
+        
     public int[] getLatest() {return path.get(path.size() -1);}
-    
-    public int[] getSecondLatest() {return path.get(path.size() - 2);}
-    
+        
     public boolean lastIsNg() {
         int[] coordinates = getLatest();
         if (path.size() < 1) return false; 
-        if (maze.get(coordinates[0]).get(coordinates[1]).equals("#")){
-            // System.out.println("into wall");
-            return true;
-        }
+        if (maze.get(coordinates[0]).get(coordinates[1]).equals("#")) return true; //if inside a wall
         for(int i = 0; i < path.size() -1 ; i++) {
-            if(coordinates[0]==path.get(i)[0] && coordinates[1] == path.get(i)[1]) {
-                // System.out.println("not good");
-                return true;
-            }
+            if(coordinates[0]==path.get(i)[0] && coordinates[1] == path.get(i)[1]) return true; //if on a tile that was already in the path 
         }
         return false; 
     }
@@ -100,10 +90,7 @@ public class Maze {
     
     public ArrayList<int[]> copyPath() {
         ArrayList<int[]> copy = new ArrayList<>();
-        for(int[] coordinates: path) {
-            copy.add(coordinates);
-        }
-        // System.out.println(copy);
+        for(int[] coordinates: path) {copy.add(coordinates);}
         return copy;
     }    
     
