@@ -21,6 +21,8 @@ public class Maze {
                 String line = sc.nextLine();
                 maze.add(makeHorizontal(line));
             }
+            path = new ArrayList<>();
+            path.add(start);
             sc.close();
         }
         catch (FileNotFoundException e) {
@@ -39,23 +41,36 @@ public class Maze {
     
     private void setStartAndEnd(String symbol, String target,int[] startOrEnd, int x) {
         if(symbol.equals(target)) {
-            startOrEnd[0] = x;
-            startOrEnd[1] = maze.size();
+            startOrEnd[0] = maze.size();
+            startOrEnd[1] = x;
         }
     }
     
     public int[] getStart() {return start;}
     
-    public int[] getLatest() {return path.get(path.size() -1)};
+    public int[] getEnd() {return end;}
+    
+    public int[] getLatest() {return path.get(path.size() -1);}
+    
+    public int[] getSecondLatest() {return path.get(path.size() - 2);}
     
     public boolean lastIsNg() {
-        int[] coordinates = path.get(path.size() - 1);
+        int[] coordinates = getLatest();
         if (path.size() < 1) return false; 
-        else if (maze.get(coordinates[0]).get(coordinates[1]).equals("#")) return true;
-        else return false; 
+        if (maze.get(coordinates[0]).get(coordinates[1]).equals("#")){
+            System.out.println("into wall");
+            return true;
+        }
+        for(int i = 0; i < path.size() -1 ; i++) {
+            if(coordinates[0]==path.get(i)[0] && coordinates[1] == path.get(i)[1]) {
+                System.out.println("not good");
+                return true;
+            }
+        }
+        return false; 
     }
     
-    public boolean accept() {return path.get(path.size() - 1).equals(end);}
+    public boolean accept() {return getLatest()[0] == end[0] && getLatest()[1] == end[1];}
     
     public void populate(int[] coordinates) {path.add(coordinates);}
     
@@ -67,6 +82,15 @@ public class Maze {
             for(int v = 0; v < maze.get(h).size(); string += maze.get(h).get(v), v++) {}
         }
         return string;
+    }
+    
+    public ArrayList<int[]> copyPath() {
+        ArrayList<int[]> copy = new ArrayList<>();
+        for(int[] coordinates: path) {
+            copy.add(coordinates);
+        }
+        System.out.println(copy);
+        return copy;
     }
     
     
