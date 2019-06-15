@@ -46,6 +46,20 @@ public class Maze {
         }
     }
     
+    public Maze(ArrayList<int[]> imprint, Maze original) {
+        maze = new ArrayList<>();
+        for(int h = 0; h < original.maze.size(); h++) {
+            maze.add(new ArrayList<String>());
+            for(int v = 0; v < original.maze.get(h).size(); v++) {
+                maze.get(h).add(original.maze.get(h).get(v));
+                for(int i = 0; i < imprint.size(); i++) {
+                    if(imprint.get(i)[0] == h && imprint.get(i)[1] == v) 
+                        maze.get(h).set(v,"P");
+                }
+            }
+        }
+    }
+    
     public int[] getStart() {return start;}
     
     public int[] getEnd() {return end;}
@@ -58,12 +72,12 @@ public class Maze {
         int[] coordinates = getLatest();
         if (path.size() < 1) return false; 
         if (maze.get(coordinates[0]).get(coordinates[1]).equals("#")){
-            System.out.println("into wall");
+            // System.out.println("into wall");
             return true;
         }
         for(int i = 0; i < path.size() -1 ; i++) {
             if(coordinates[0]==path.get(i)[0] && coordinates[1] == path.get(i)[1]) {
-                System.out.println("not good");
+                // System.out.println("not good");
                 return true;
             }
         }
@@ -89,9 +103,8 @@ public class Maze {
         for(int[] coordinates: path) {
             copy.add(coordinates);
         }
-        System.out.println(copy);
+        // System.out.println(copy);
         return copy;
-    }
-    
+    }    
     
 }
