@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public class Maze {
     private ArrayList<ArrayList<String>> maze; 
+    private ArrayList<int[]> path;
     private int[] start = new int[2];
     private int[] end = new int[2];
     
@@ -43,6 +44,23 @@ public class Maze {
         }
     }
     
+    public int[] getStart() {return start;}
+    
+    public int[] getLatest() {return path.get(path.size() -1)};
+    
+    public boolean lastIsNg() {
+        int[] coordinates = path.get(path.size() - 1);
+        if (path.size() < 1) return false; 
+        else if (maze.get(coordinates[0]).get(coordinates[1]).equals("#")) return true;
+        else return false; 
+    }
+    
+    public boolean accept() {return path.get(path.size() - 1).equals(end);}
+    
+    public void populate(int[] coordinates) {path.add(coordinates);}
+    
+    public void depopulate() {path.remove(path.size() - 1);}
+    
     public String toString() {
         String string = new String();
         for(int h = 0; h < maze.size(); string+= System.lineSeparator(), h++) {
@@ -50,4 +68,6 @@ public class Maze {
         }
         return string;
     }
+    
+    
 }
