@@ -9,18 +9,15 @@ import java.util.ArrayList;
 public class Maze {
     private ArrayList<ArrayList<String>> maze; 
     private ArrayList<int[]> path;
-    private int[] start = new int[2];
-    private int[] end = new int[2];
+    private int[] start;
+    private int[] end;
     
     public Maze(String file) {
-        maze = new ArrayList<ArrayList<String>>();
+        maze = new ArrayList<>();
         File textMaze = new File(file);
         try {
             Scanner sc = new Scanner(textMaze);
-            while(sc.hasNextLine()) {
-                String line = sc.nextLine();
-                maze.add(makeHorizontal(line));
-            }
+            for(String line; sc.hasNextLine(); line = sc.nextLine(), maze.add(makeHorizontal(line))) {}
             path = new ArrayList<>();
             path.add(start);
             sc.close();
@@ -30,23 +27,20 @@ public class Maze {
         }
     }
     
-    private ArrayList<String> makeHorizontal(String line) {
+    private ArrayList<String> makeHorizontal(String line) { //split each character in the horizontal line 
         ArrayList<String> horizontal = new ArrayList<String>();
         for(int i = 0; i < line.length(); horizontal.add(line.substring(i,i+1)), i++) { 
-            setStartAndEnd(line.substring(i,i+1), "s", start, i);
-            setStartAndEnd(line.substring(i,i+1), "e", end, i);
+            setEndPoints(line, i, "s", start);
+            setEndPoints(line, i, "e", end);
         }
         return horizontal;
     }
     
-    private void setStartAndEnd(String symbol, String target,int[] startOrEnd, int x) {
-        if(symbol.equals(target)) {
-            startOrEnd[0] = maze.size();
-            startOrEnd[1] = x;
-        }
+    private void setEndPoints(String line, int x, String symbol, int[] target) { //sets the position of the start and end points
+        if(line.substring(x,x+1).equals(symbol)) target = new int[]{maze.size(), x};
     }
     
-    public Maze(ArrayList<int[]> imprint, Maze original) {
+    public Maze(ArrayList<int[]> imprint, Maze original) { //imprints the path of the solution onto the maze 
         maze = new ArrayList<>();
         for(int h = 0; h < original.maze.size(); h++) {
             maze.add(new ArrayList<String>());

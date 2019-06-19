@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 
+/*
+    Provides several solutions to a maze 
+*/
 public class MazeSolver {
     ArrayList<ArrayList<int[]>> paths;
     Maze maze; 
@@ -11,11 +14,8 @@ public class MazeSolver {
     }
     
     public void generatePath() {
-        if(maze.lastIsNg()) {
-        }
-        else if(maze.accept()) {
-            paths.add(maze.copyPath());
-        }
+        if(maze.lastIsNg()) {}
+        else if(maze.accept()) { paths.add(maze.copyPath()); }
         else {
             int[] latest = maze.getLatest();
             int[][] adj={{latest[0], latest[1] - 1},  //left
@@ -31,8 +31,7 @@ public class MazeSolver {
     }
     
     public String toString() {
-        String string = new String();
-        string += maze;
+        String string = maze.toString();
         for(ArrayList<int[]> path: paths) {
             for(int[] coord: path) {
                 string += "(" + coord[0] + " " + coord[1] + "),";
