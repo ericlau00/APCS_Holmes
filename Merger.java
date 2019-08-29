@@ -46,16 +46,16 @@ public class Merger {
         }
     }
     
-    private void merge_while(int target, int start0, int end0, int start1, int end1) {
-        for(int elementsMerged = 0; elementsMerged < localData.size(); elementsMerged++) {
-            if(start0 == end0) usersData.set(target++,localData.get(start1++));
-            else if (start1== end1) usersData.set(target++, localData.get(start0++));
-            else {
-                if(localData.get(start0).compareTo(localData.get(start1)) < 0) usersData.set(target++, localData.get(start0++));
-                else usersData.set(target++,localData.get(start1++));
-            }
-        }
-    }
+    // private void merge_while(int target, int start0, int end0, int start1, int end1) {
+    //     for(int elementsMerged = 0; elementsMerged < localData.size(); elementsMerged++) {
+    //         if(start0 == end0) usersData.set(target++,localData.get(start1++));
+    //         else if (start1== end1) usersData.set(target++, localData.get(start0++));
+    //         else {
+    //             if(localData.get(start0).compareTo(localData.get(start1)) < 0) usersData.set(target++, localData.get(start0++));
+    //             else usersData.set(target++,localData.get(start1++));
+    //         }
+    //     }
+    // }
 
     /**
       @return a string representation of the user's data
