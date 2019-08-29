@@ -25,35 +25,29 @@ public class Accumulator {
                elements in list when some elements of the list might
                omit support for a particular operation.
 
-               This protection is implemented by the compiler (compiler? JVM?)
+               This protection is implemented by the _JVM_ (compiler? JVM?)
                The following code violates the restriction:
               */
-            // [code that violates the restriction]
+            // [code that violates the restriction] --> list.get(el)
 
             // if (list.get(el).startsWith(prefix)) {
                 // result += list.get(el) + " ";
             // }
             /*
-             predicted error message: an error message saying that el does not have the particular method. 
+             predicted error message: method not found
 
-             actual error message:
-Accumulator.java:33: error: cannot find symbol
-            if (list.get(el).startsWith(prefix)) {
-                            ^
-  symbol:   method startsWith(String)
-  location: class Object
-1 error
+             actual error message: Error: Could not find or load main class UserOfList.class  
              */
 
 
             /* 4.  Workaround 0
                A programmer should expect there to be a way to
                work around the stumbling block, because
-               the JVM (compiler? JVM?)
+               the __compiler__ (compiler? JVM?)
                knows the type of an element.
 
-               Java's instanceof operator identifies the type
-               of an element to the JVM (compiler? JVM?).
+               Java's __=__ operator identifies the type
+               of an element to the __compiler__ (compiler? JVM?).
              */
 
 
