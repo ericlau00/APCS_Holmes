@@ -57,7 +57,6 @@ public class Merger {
         }
     }
 
-
     /**
       @return a string representation of the user's data
      */
